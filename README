@@ -1,0 +1,9 @@
+A project that shows how to use Ember JS with a Spray IO backend
+
+It display a simple data table (JQuery DataTable) with data fetched from
+the server.
+
+The FE runs under Node JS / Express
+The BE runs as a Scala Spray IO server
+
+(Uses CORS)
