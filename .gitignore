@@ -1,0 +1,7 @@
+.cache
+.classpath
+.project
+bin/
+node_modules/
+target/
+public/javascripts/app.js

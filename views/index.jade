@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  script(src='/javascripts/app.js')
+  
+  script(type='text/x-handlebars' data-template-name='index')
+    h1 EmberJS
+    {{view MyApp.DataTableView}}
+  
+  script(type='text/x-handlebars' data-template-name='table')
+    table
+      thead
+        tr
+          th First name
+          th Last name
+      tbody
+        {{#each}}
+        tr
+          td {{firstName}}
+          td {{lastName}}
+        {{/each}}
+  

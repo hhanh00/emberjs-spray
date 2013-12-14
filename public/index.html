@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.2.0/ember.js"></script>
+<script src="/javascripts/ember-data.js"></script>
+<script
+	src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+</head>
+<body>
+	<script src="/javascripts/app.js"></script>
+	<script type="text/x-handlebars" data-template-name="index"><h1>EmberJS</h1>{{view MyApp.DataTableView}}</script>
+	<script type="text/x-handlebars" data-template-name="table"><div id="people"><table><thead><tr><th>First name</th><th>Last name</th></tr></thead><tbody>{{#each}}<tr><td>{{firstName}}</td><td>{{lastName}}</td></tr>{{/each}}</tbody></table></div></script>
+</body>
+</html>
