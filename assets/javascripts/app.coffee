@@ -1,7 +1,7 @@
 window.MyApp = Ember.Application.create()
 
 DS.RESTAdapter.reopen({
-  host: 'http://localhost:3001'
+  namespace: 'be'
 })
 
 MyApp.Router.map(->

@@ -7,11 +7,13 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-
+var httpProxy = require('http-proxy');
+var proxy = new httpProxy.RoutingProxy();
 var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
+
 app.use(require('connect-coffee-script')({
   src: path.join(__dirname, 'assets'),
   dest: path.join(__dirname, 'public')
@@ -31,6 +33,12 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/be/*', function(req, res) {
+  proxy.proxyRequest(req, res, {
+      host: 'localhost',
+      port: 3001
+  })
+});
 app.get('/', routes.index);
 
 http.createServer(app).listen(app.get('port'), function(){
